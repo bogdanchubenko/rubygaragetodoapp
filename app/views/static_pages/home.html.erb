@@ -1,0 +1,21 @@
+<% provide(:title, 'Home') %>
+<div id="header">
+  <h1 id="simpleTodoLists" class="text-uppercase text-center">Simple TODO Lists</h1>
+  <h4 id="fromRG" class="text-uppercase text-center">From Ruby Garage</h4>
+</div>
+
+<% if signed_in? %>
+    <div class="row">
+      <aside class="span4">
+        <section>
+          <%= render 'projects/index' %>
+        </section>
+      </aside>
+    </div>
+<% else %>
+	<div class="text-center">
+    <a href="/signup">
+      <button class="btn btn-primary">Sign up now!</button>
+    </a>
+	</div>
+<% end %>

@@ -8,7 +8,7 @@
 /.bundle
 .idea
 .env
-
+.ruby-gemset
 
 # Ignore the default SQLite database.
 /db/*.sqlite3

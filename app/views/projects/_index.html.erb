@@ -1,0 +1,20 @@
+
+
+
+
+<div class="row">
+  <div class="" id="projects"><%= render partial: 'projects/project', collection: @projects%>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="create_new_project" id="project-form"  style="display:none;"></div>
+</div>
+
+  <div class="text-center">
+    <%= link_to new_project_path,
+                data: {no_turbolink: true, remote: true} do %>
+      <button class="btn btn-primary"><i class="glyphicon glyphicon-plus"></i>Add TODO List</button>
+    <% end %>
+  </div>

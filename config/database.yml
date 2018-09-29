@@ -1,0 +1,20 @@
+default: &default
+  host: localhost
+  adapter: postgresql
+  pool: 5
+
+development:
+  <<: *default
+  database: bodjan_rubist_development
+
+test:
+  <<: *default
+  database: bodjan_rubist_test
+
+production:
+  <<: *default
+  database: bodjan_rubist_production
+  url:  <%= ENV["DATABASE_URL"] %>
+  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
+
+

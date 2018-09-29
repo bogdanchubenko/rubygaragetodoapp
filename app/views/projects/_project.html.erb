@@ -1,0 +1,37 @@
+<%= javascript_include_tag 'project/sortable_project_tasks', 'data-turbolinks-track' => true  %>
+<%= javascript_include_tag 'tasks/task_form' %>
+
+<%= javascript_include_tag 'tasks/star_priority_form'%>
+<div>
+  <div id="panel-group_<%= project.id %>">
+      <div class="panel panel-primary ">
+            <div class="panel-heading ">
+                  <span class="glyphicon glyphicon-calendar vcenter"></span><%= best_in_place project, :title, :classes => 'name-edit'%></td>
+                  <span class="right-floated">
+                    <%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, project, remote: true,
+                                  class: 'btn btn-primary btn-xs',
+                                  method: :delete%>
+                  </span>
+            </div>
+        <div class="panel-body">
+<div id="task-form-<%= @project.id%>" class="row">
+          <%= render partial: 'tasks/form', :locals => {:project => project} %>
+</div>
+          <table class="tasks">
+          <tr>  <div class="sortable" id="tasks_<%= project.id %>">
+              <%= render partial: 'tasks/task', collection: project.tasks, :locals => {:project => project} %>
+            </div>
+          </tr>
+          </table>
+
+
+
+        </div>
+      </div>
+
+</td>
+</div>
+
+</div>
+</tr>
+

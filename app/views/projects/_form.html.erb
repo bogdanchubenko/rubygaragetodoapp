@@ -1,0 +1,13 @@
+<div class="panel panel-primary ">
+  <div class="panel-heading ">
+
+  <%=form_for @project, remote: true do |f| %>
+
+      <%= f.text_field :title, :class=>'betaTextField'%>
+
+      <%= f.button 'Create TODO', :class=>'btn btn-success'%>
+
+  <% end %>
+</div>
+  </div>
+</div>
